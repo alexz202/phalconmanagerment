@@ -1,0 +1,206 @@
+.tag-hover,
+.tag-hover:hover,
+.tag-hover a,
+.tag-hover a:hover{
+    color: orangered;
+}
+
+.tag_value_ul{
+    margin-left: 20px;
+}
+
+
+
+/*alluser*/
+
+.allUser_l{
+    width: 20%;
+}
+
+.allUser_r{
+    width: 79%;
+    overflow-x: auto;
+}
+
+
+.login_backgroud{
+    background:url(../img/backgroud1.jpg) center center no-repeat;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height:100%;
+    position: absolute;
+    background-size:100% 100%;
+}
+.div-login{
+    margin: 260px 0px 0px 180px;
+    width:60%;
+    color: white;
+}
+
+.nav-header{
+    background-color:#388ad2;
+    color: white;
+    border-radius:0px;
+    background:url(../img/header-bk.jpg) no-repeat;
+    background-size:100% 100%;
+}
+.nav-header a,.nav-header a:link,.nav-header a:hover{
+    color:white;
+}
+
+
+.form_gs .form-group{
+    text-align: left;
+    padding-left: 0px;
+}
+
+
+.form_gs .col-sm-10,.col-sm-3,.col-sm-5{
+    text-align: left;
+    padding-left: 0px;
+}
+
+.main_left{
+    width: 11%;
+    float: left;
+    margin-right:5px;
+}
+.main_right{
+    width: 88%;
+    float: left;
+}
+
+
+
+.left_all_div{
+    width: 100%;
+}
+.f_left{
+    float: left;
+}
+
+
+.treeview{
+    width: 98%;
+}
+
+.hideLeftDiv{
+    height: 30px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.hideLeftBtn{
+    cursor: pointer;
+    margin-top:150px;
+    font-size:14px;
+    font-weight: bold;
+}
+
+.gs-div{
+    margin-left:-15px;
+    margin-right: -15px;
+    overflow: hidden;
+}
+.gs-label{
+    text-align:right;padding:7px  15px 0px 15px;
+}
+td .btn{
+    margin-bottom: 1px;!important;
+}
+
+.table-body a,a:link{
+    color:#000;
+}
+.table-body .jd{
+    color: #0d6aad;
+}
+
+.table{
+    word-break: break-all;
+}
+.table td{
+    padding: 0;!important;
+}
+.gaosiSearchBtn{
+    margin-left: 50px;
+}
+.error{
+    color:red;
+}
+.requireTag{
+    color:red;
+}
+
+
+.suggest-div{
+    margin: 20px 0px;
+}
+
+.div-kmove{
+    border: 1px solid #dddddd;
+    text-decoration:none;
+    padding: 6px 12px;
+    float: left;
+}
+.table thead > tr > th,
+.table tbody > tr > th,
+.table tfoot > tr > th,
+.table thead > tr > td,
+.table tbody > tr > td,
+.table tfoot > tr > td {
+    padding: 4px;!important;
+}
+
+.roleControlDiv{
+    border-bottom:1px solid #dddddd;
+    margin: 20px;
+    width: 85%;
+    padding: 5px;
+
+}
+
+.checkAllRoleDiv{
+    float: right;
+    width: 50px;
+    margin-right: 25%;
+}
+.prov{
+    min-width: 100px;
+    padding: 0px 10px;
+}
+
+.ul_saixuan{
+    height: 400px;
+    max-height: 400px;
+    overflow-y: scroll;
+    list-style-type:none
+}
+.ul_saixuan li{
+    list-style-type:none;
+    width: 20%;
+    float: left;
+    margin: 5px;
+}
+.tree_honver{
+    background-color: #F5F5F5;
+}
+.ul_tj{
+    height: 35px;
+    width: 100%;
+}
+.ul_tj_li{
+    list-style-type:none;
+    float: left;
+    width: 40%;
+    line-height: 35px;
+    /*margin: 5px;*/
+}
+.ul_tj_li_2{
+    list-style-type:none;
+    float: left;
+    width: 10%;
+    line-height: 35px;
+    /*margin: 5px;*/
+}

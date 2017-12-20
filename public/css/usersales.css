@@ -1,0 +1,234 @@
+
+#div_l{
+    width: 15%;
+    overflow: hidden;
+}
+#div_r{
+    width: 85%;
+}
+.us-right-div-lf{
+    overflow: hidden;
+    white-space :  nowrap;
+    max-height: 680px;
+    float: left;
+    position: relative;
+    width: 100%;
+}
+
+
+.us-right-div{
+    overflow: auto;
+    white-space :  nowrap;
+    max-height: 680px;
+    float: left;
+    position: relative;
+    width: 100%;
+}
+
+
+.tb_title{
+    margin: 0;
+    padding: 0;
+    width:100%;
+}
+.tb_lf{
+    width:100%;
+}
+
+.td_title{
+    margin: 0;
+    padding: 0;
+    width:150px;
+}
+
+.td_title_11{
+    margin: 0;
+    padding: 0;
+    width:150px;
+}
+
+.co{ margin: 0;padding: 0; float: left;}
+.div_co{width:150px;}
+
+
+
+
+.right-div{
+    overflow: hidden;
+    white-space :  nowrap;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.boxx{
+    width: 100%;
+    margin:  0 auto;
+    height: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.boxx table{
+    min-width: 5070px;
+}
+
+
+.boxx3{
+    width: 100%;
+    margin:  0 auto;
+    height: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.boxx3 table{
+    min-width: 280px;
+}
+
+
+/* 第一个table start */
+.table-tit {
+    /* width: 4520px; */
+    background-color: #e0e3e8;
+}
+.table-tit,
+.table-tit td,
+.table-tit tr,
+.boxx-body tr,
+.boxx-body td,
+.boxx-body table
+.boxx-body-3 tr,
+.boxx-body-3 td,
+.boxx-body-3 table
+
+{
+    border: 1px solid #000;
+    border-collapse: collapse;
+}
+.table-tit td{
+    width: 130px;
+    text-align: center;
+    padding:5px 0px 5px 0px;
+}
+/* 第一个table end */
+
+/* 第二个盒子  start*/
+.boxx-body{
+    height: 680px;
+    min-width: 5070px;
+    margin-top: -1px;
+    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+}
+.boxx-body table{
+    min-width: 5070px;
+}
+.boxx-body table td{
+    width: 130px;
+    text-align: center;
+    padding:5px 0px 5px 0px;
+}
+/* 第二个盒子  end*/
+
+
+/* 第三个盒子  start*/
+.boxx-body-3{
+    height: 680px;
+    min-width: 280px;
+    margin-top: -1px;
+    overflow: hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+}
+.boxx-body-3 table{
+    min-width: 280px;
+}
+.boxx-body-3 table td{
+    width: 125px;
+    text-align: left;
+    padding:5px 0px 5px 20px;}
+/* 第三个盒子  end*/
+
+
+
+
+
+.boxx4{
+    width: 100%;
+    margin:  0 auto;
+    height: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.boxx4 table{
+    min-width: 1560px;
+}
+
+
+/* 第二个盒子  start*/
+.boxx-body-4{
+    height: 100px;
+    min-width: 1560px;
+    margin-top: -1px;
+    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+}
+.boxx-body-4 table{
+    min-width: 1560px;
+}
+.boxx-body-4 table td{
+    width: 130px;
+    text-align: center;
+    padding:5px 0px 5px 0px;
+}
+
+.table-tit-4 td{
+    width: 130px;
+    text-align: center;
+    padding:5px 0px 5px 0px;
+}
+
+
+.table-tit-4 {
+    /* width: 4520px; */
+    background-color: #e0e3e8;
+}
+
+.table-tit-4,
+.table-tit-4 td,
+.table-tit-4 tr,
+.boxx-body-4 tr,
+.boxx-body-4 td,
+.boxx-body-4 table
+{
+    border: 1px solid #000;
+    border-collapse: collapse;
+}
+
+/* 第三个盒子  start*/
+.boxx-body-4{
+    height: 100px;
+    min-width: 1560px;
+    margin-top: -1px;
+    overflow: hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+}
+.boxx-body-4 table{
+    min-width: 1560px;
+}
+.boxx-body-4 table td{
+    width: 130px;
+    text-align: left;
+    padding:5px 0px 5px 20px;}
+
+.boxx-body-4 input{
+    width: 100px;
+}

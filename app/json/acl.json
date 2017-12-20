@@ -1,0 +1,29 @@
+{
+  "Roles":{"Common":"Common","Guests":"Guests"},
+  "PrivateResources":{"user":["center"],
+                "raise_funds":["create"],
+                "index":["test"]
+  },
+  "PublicResources":{"index":["index"],
+                    "resource":["index","search","new","edit","create","save","delete"],
+                    "role":["index","search","new","edit","create","save","delete","access","accessSave"],
+                    "user":["index","search","new","edit","create","save","delete","allList"],
+                    "dept":["index","search","new","edit","create","save","delete","treeList"],
+                    "order":["index","search","new","edit","create","save","delete","detail","export"],
+                    "customerfollow":["index","search","new","edit","create","save","delete","detail","export"],
+                    "dict":["index","search","new","edit","create","save","delete","makeDict"],
+                    "login":["index","loginSubmit","loginout"],
+                     "userlog":["index","detail"],
+                    "syslog":["index","detail"],
+                     "customer":["public","potential","success","fail","new","edit","create","save","delete","detail","export","import","makeImportModel","ImportByModel",
+                     "settingAccount","recover"
+                     ],
+                    "usersales":["aim","index","new","edit","create","save","delete","detail","treeData","modifyAimShow","modifyAim"]
+  },
+  "PrivateAcl":{
+      "Common":{
+        "user":["center"]
+      }
+  }
+
+}

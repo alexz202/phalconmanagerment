@@ -1,0 +1,16 @@
+{
+  "Roles":{"Common":"Common","Guests":"Guests"},
+  "PrivateResources":{"user":["center"],
+                "raise_funds":["create"],
+                "index":["test"]
+  },
+  "PublicResources":{"user":["login","loginout"],
+                    "index":["index"]
+  },
+  "PrivateAcl":{
+      "Common":{
+        "user":["center"]
+      }
+  }
+
+}
