@@ -31,12 +31,16 @@ class ControllerBase extends Controller
        return  $this->di['dictJson']->get($key);
     }
 
+
+
+
+
     protected function setValueToObj($obj,$func,$value,$isTime=0){
             if(isset($value)&&trim($value)!=''){
                 if($isTime==1)
-                    $obj->$func(strtotime($value));
+                    $obj->$func(strtotime(trim($value)));
                 else
-                     $obj->$func($value);
+                     $obj->$func(trim($value));
             }
     }
 
@@ -134,9 +138,9 @@ class ControllerBase extends Controller
         $builder->columns($columns);
         $total_items=intval($_GET['total_items']);
         if($tagall==0||$total_items<10000){
-            $limit= $this->pagersize;
-            $offset=$this->pagersize*($numberPage-1);
-            $builder->limit($limit,$offset);//数据量大限制导出本页数据
+//            $limit= $this->pagersize;
+//            $offset=$this->pagersize*($numberPage-1);
+            $builder->limit($total_items,0);//数据量大限制导出本页数据
             $builder->orderBy($orderby);
             $result=$builder->getQuery()->execute();
             $data=$result->toArray();
@@ -207,6 +211,10 @@ class ControllerBase extends Controller
 
                     } elseif ($column_model['type'] == 'time') {
                         $item[$k] = date('Y-m-d H:i:s', $v);
+                    }elseif($column_model['type'] == 'day'){
+                        $item[$k] = date('Y-m-d', $v);
+                    }elseif($column_model['type'] == 'textarea'){
+                        $item[$k] ='"'.$v.'"';
                     }
                 }
                 $_data[] = $item;
@@ -285,56 +293,7 @@ class ControllerBase extends Controller
         //EXPORT FUNC
         if(isset($_GET['export'])){
             //Todo 动态设定Export 字段
-
-            if(isset($_GET['exCo'])){
-                $columns=$_GET['exCo'];
-            }
-            $builder->columns($columns);
-            if($exportType==1){
-                $limit= $this->pagersize;
-                $offset=$numberPage*($this->pagersize-1);
-                $builder->limit($limit,$offset);//数据量大限制导出本页数据
-            }
-            $result=$builder->getQuery()->execute();
-            $data=$result->toArray();
-            $list=array();
-
-            (new Mylog($this->di))->log($this->dispatcher->getActionName(),'导出数据',
-                array(
-                    'controll'=>$this->dispatcher->getControllerName(),
-                    'userId'=>$this->user_id,
-                    'username'=>$this->nickname,
-                    "data"=>$_GET
-                ));
-
-            if(count($data)>0){
-                $keys=array_keys($data[0]);
-                foreach ($keys as $key){
-                    $list['title'][]=$this->model[$key]['lable'];
-                }
-
-
-                $_data=[];
-                foreach ($data as $item){
-                    foreach ($item as $k=>$v){
-                        $column_model=$this->model[$k];
-                        if($k!='sub_account_id'&&($column_model['type']=='select'||$column_model['type']=='radio')){
-                            if(isset($column_model['options'][$v]))
-                                $item[$k]=$column_model['options'][$v]['text'];
-                            else
-                                $item[$k]=$v;
-
-                        }elseif($column_model['type']=='time'){
-                            $item[$k]= date('Y-m-d H:i:s',$v);
-                        }
-                    }
-                    $_data[]=$item;
-                }
-
-                self::exportExecel($this->dispatcher->getControllerName().'_'.$this->dispatcher->getActionName(),$list,$_data);
-                $this->persistent->exportParams=null;
-            }
-            exit();
+            $this->exportFunc($builder,$numberPage,$orderby,1);
         }else{
             $paginator = new PaginatorQueryBuilder([
                 "builder" => $builder,
@@ -807,7 +766,7 @@ class ControllerBase extends Controller
                         $searchKey=$k;
                     }
                     $condition[$k]=$mode['searchOptions'];
-                    if($mode['type']=='time'){
+                    if($mode['type']=='time'|| $mode['type']=='day'){
                         if($mode['searchOptions']['type']=='between'){
                             if(is_array($_GET[$k])){
                                 $this->tag->setDefault($k,join(',',$_GET[$k]));
@@ -900,7 +859,7 @@ class ControllerBase extends Controller
                     'qt'=>$qt,
                 );
 
-                if($model[$key]['type']=='time'){
+                if($model[$key]['type']=='time'|| $model[$key]['type']=='day'){
                     $list_value[$key]=$this->filterTimeBetween($_GET['gs-'.$key]);
                 }else
                     $list_value[$key]=$_GET['gs-'.$key];
