@@ -404,19 +404,17 @@ $(function(){
     $('.exportBtn').click(function(){
         var data= $(this).data();
         var _url=data.url;
-         var title="导出";
-         var exporturl=data.exporturl;
+        var title="导出";
+        var exporturl=data.exporturl;
         $.ajax(
             {
                 type:'get',
-                url:_url+"?link="+encodeURI(exporturl),
-
+                url:_url+"?link="+exporturl,
                 success:function(msg){
                     if(checkAuth(msg,0)==false){
                         return false;
                     }
-
-                   var ss= layer.open({
+                    var ss= layer.open({
                         type: 1,
                         title: title,
                         closeBtn:1,
@@ -434,7 +432,7 @@ $(function(){
                     CheckBox('checkAll','checkRev','exportColumn');
 
                     $('.btnMakeExport').click(function(){
-                        var url=$('#link').val();
+                        // var url=$('#link').val();
                         var columns=[];
                         $('.exportColumn').each(function () {
                             if($(this).prop("checked")==true){
@@ -446,13 +444,13 @@ $(function(){
                             return ;
                         }
 
-
-                        if(url.indexOf('?')==-1){
-                            url= url+"?export=1&exCo="+columns.join(',');
+                        if(exporturl.indexOf('?')==-1){
+                            exporturl= exporturl+"?export=1&exCo="+columns.join(',');
                         }else{
-                            url=  url+"&export=1&exCo="+columns.join(',');
+                            exporturl=  exporturl+"&export=1&exCo="+columns.join(',');
                         }
-                        window.location.href=url;
+                        window.location.href=exporturl;
+
                         layer.close(ss);
                     });
 
