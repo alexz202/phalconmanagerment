@@ -10,6 +10,9 @@ $loader = new Loader();
 $loader->registerNamespaces([
     'Zejicrm\Models' => APP_PATH . '/common/models/',
     'Zejicrm'        => APP_PATH . '/common/library/',
+    'Zejicrm\Phpqrcode'        => APP_PATH . '/common/library/phpqrcode',
+    'Zejicrm\Messager'=>APP_PATH . '/common/library/Messager',
+    'Zejicrm\config'        => APP_PATH . '/common/config/',
 ]);
 
 /**

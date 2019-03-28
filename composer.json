@@ -1,0 +1,8 @@
+{
+    "require": {
+        "phalcon/incubator": "^3.2",
+	"swiftmailer/swiftmailer":"^5.4",
+        "duncan3dc/fork-helper": "^2.2"
+		
+    }
+}

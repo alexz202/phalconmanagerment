@@ -102,6 +102,21 @@ $di->setShared('voltShared', function ($view) {
         }
     ]);
 
+
+    //自定义过滤器
+    $compiler = $volt->getCompiler();
+    $compiler->addFilter("filterSubject", function($resolvedArgs, $exprArgs) {
+        return "Zejicrm\Util::filterSubject(".$resolvedArgs.")";
+    });
+
+    $compiler->addFilter("filterUrlParams", function($resolvedArgs, $exprArgs) {
+        return "Zejicrm\Util::filterUrlParams(".$resolvedArgs.")";
+    });
+
+    $compiler->addFilter("filterUrlParamsClear", function($resolvedArgs, $exprArgs) {
+        return "Zejicrm\Util::filterUrlParamsClear(".$resolvedArgs.")";
+    });
+
     return $volt;
 });
 
@@ -182,3 +197,15 @@ $di->set(
         return $m;
     }
 );
+
+
+
+//beanstalkd
+$di->set('beanstalk',function (){
+    $config = $this->getConfig();
+    $beanstalk = new BeanstalkExtended(array(
+        'host'   => $config->beanstalkd->host,
+        'prefix' => $config->beanstalkd->prefix,
+    ));
+    return $beanstalk;
+});
